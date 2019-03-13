@@ -1,0 +1,133 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+	<head>
+		<title>Getting Started Extension's Popup</title>
+		<style type="text/css">
+			body {
+				margin: 10px;
+				white-space: nowrap;
+				background-color: #d8f8ff;
+				color: magenta;
+				font-family: cursive;
+			}
+
+			h1 {
+				font-size: 15px;
+			}
+
+			#container {
+				align-items: center;
+				display: flex;
+				justify-content: space-between;
+			}
+		</style>
+
+		<!--
+			- JavaScript and HTML must be in separate files: see our Content Security
+			- Policy documentation[1] for details and explanation.
+			-
+			- [1]: https://<developer class="ch"></developer>rome.com/extensions/contentSecurityPolicy
+		-->
+		<script src="p5.js"></script>
+		<script src="p5.dom.js"></script>
+		<script src="popup.js"></script>
+	</head>
+
+	<body>
+		<h1>Background Color Changer</h1>
+		<div id="container">
+			<ul>
+				<li>
+					<span>Choose a page color</span>
+					<select id="dropdown">
+						<option selected disabled hidden value=''></option>
+						<option value="white">White</option>
+						<option value="pink">Pink</option>
+						<option value="green">Green</option>
+						<option value="yellow">Yellow</option>
+						<option value="blue">Blue</option>
+						<option value="magenta">Magenta</option>
+						<option value="#000000">Black</option>
+						<option value="#323232">Dark grey</option>
+						<option value="#777">Grey</option>
+						<option value="#d8f8ff">Light Blue</option>
+						<option value="#fff8d8">Light Orange</option>
+						<option value="#ffd8d8">Light Pink</option>
+						<option value="#f8d8ff">Light Purple</option>
+					</select>
+				</li>
+				<li>
+					<span>Choose a bg color for everything</span>
+					<select id="background_dropdown">
+						<option selected disabled hidden value=''></option>
+						<option value="white">White</option>
+						<option value="pink">Pink</option>
+						<option value="green">Green</option>
+						<option value="yellow">Yellow</option>
+						<option value="blue">Blue</option>
+						<option value="magenta">Magenta</option>
+						<option value="#000000">Black</option>
+						<option value="#323232">Dark grey</option>
+						<option value="#777">Grey</option>
+						<option value="#d8f8ff">Light Blue</option>
+						<option value="#fff8d8">Light Orange</option>
+						<option value="#ffd8d8">Light Pink</option>
+						<option value="#f8d8ff">Light Purple</option>
+					</select>
+				</li>
+				<li>
+					<span>Choose a text color</span>
+					<select id="col_dropdown">
+						<option selected disabled hidden value=''></option>
+						<option value="white">White</option>
+						<option value="pink">Pink</option>
+						<option value="green">Green</option>
+						<option value="yellow">Yellow</option>
+						<option value="blue">Blue</option>
+						<option value="magenta">Magenta</option>
+						<option value="#000000">Black</option>
+						<option value="#d8f8ff">Light Blue</option>
+						<option value="#fff8d8">Light Orange</option>
+						<option value="#ffd8d8">Light Pink</option>
+						<option value="#f8d8ff">Light Purple</option>
+					</select>
+				</li>
+				<li>
+					<span>Choose a font</span>
+					<select id="font_dropdown">
+						<option selected disabled hidden value=''></option>
+						<option value="Arial">Arial</option>
+						<option value="Comic Sans MS">Comic Sans MS</option>
+						<option value="Consolas">Consolas</option>
+						<option value="Informal Roman">Informal Roman</option>
+						<option value="Jokerman">Jokerman</option>
+						<option value="Wingdings">Wingdings</option>
+					</select>
+				</li>
+				<li>
+					<span>Choose a font size</span>
+					<select id="font_size_dropdown">
+						<option selected disabled hidden value=''></option>
+						<option value="1px">1px</option>
+						<option value="16px">16px</option>
+						<option value="18px">18px</option>
+						<option value="24px">24px</option>
+						<option value="100px">100px</option>
+						<option value="256px">256px</option>
+
+						<option value="200%">200%</option>	
+					</select>
+				</li>
+				<li>
+					<span>Replace every text element with this text:</span>
+					<input type="text" name="text_replacement" id="text_replacement">
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
